@@ -1,0 +1,21 @@
+.scrollable-table-container {
+    max-height: 75vh;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.scrollable-table-container table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.scrollable-table-container thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #282c34;
+}
+
+.scrollable-table-container thead th {
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+}

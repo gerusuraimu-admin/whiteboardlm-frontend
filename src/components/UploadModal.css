@@ -1,0 +1,131 @@
+.upload-modal .modal-card {
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+}
+
+.upload-modal .modal-card-head {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.upload-modal .modal-card-title {
+  font-weight: 600;
+  color: #363636;
+}
+
+.upload-modal .modal-card-body {
+  padding: 30px;
+}
+
+.upload-modal .file-area {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.upload-modal .file-cta {
+  border-radius: 4px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.upload-modal .file-cta:hover {
+  background-color: #f0f0f0;
+  border-color: #b5b5b5;
+}
+
+.upload-modal .file-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.upload-modal .selected-files {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.upload-modal .selected-files-count {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #4a4a4a;
+  padding: 5px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.upload-modal .selected-file {
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e8e8e8;
+}
+
+.upload-modal .selected-file-name {
+  margin-left: 10px;
+  font-weight: 500;
+  word-break: break-all;
+  font-size: 0.9rem;
+}
+
+.upload-modal .modal-card-foot {
+  justify-content: flex-end;
+  padding: 15px 20px;
+}
+
+.upload-modal .button {
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.upload-modal .button.is-success {
+  background-color: #48c774;
+}
+
+.upload-modal .button.is-success:hover {
+  background-color: #3ec46d;
+}
+
+.upload-modal .button.is-success[disabled] {
+  opacity: 0.7;
+}
+
+.upload-modal .is-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.upload-modal .is-loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  animation: spinAround 500ms infinite linear;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spinAround {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(359deg);
+  }
+}

@@ -1,0 +1,26 @@
+.base {
+    text-align: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.base-contents {
+    height: calc(100vh - 3.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    overflow: scroll;
+}
+
+.contents-vcenter {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.link {
+    color: #61dafb;
+}

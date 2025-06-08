@@ -9,6 +9,46 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <script>
+      // Store a flag in sessionStorage to track if we've already shown the error page
+      var hasRedirected = sessionStorage.getItem('chromeExtensionErrorRedirected');
+
+      window.addEventListener('error', function(event) {
+        if (event.filename && 
+            event.filename.includes('chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js') && 
+            !hasRedirected) {
+          console.warn('Chrome extension error detected. This is not an application error.');
+
+          // Set the flag to prevent multiple redirects
+          sessionStorage.setItem('chromeExtensionErrorRedirected', 'true');
+
+          // Check if we're not already on the error page to prevent redirect loops
+          if (!window.location.pathname.includes('chrome-extension-error.html')) {
+            // Redirect to the error page
+            window.location.href = '%PUBLIC_URL%/chrome-extension-error.html';
+          }
+        }
+      });
+
+      // Also catch unhandled promise rejections
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event.reason && 
+            event.reason.message && 
+            event.reason.message.includes('chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js') && 
+            !hasRedirected) {
+          console.warn('Chrome extension error detected in promise. This is not an application error.');
+
+          // Set the flag to prevent multiple redirects
+          sessionStorage.setItem('chromeExtensionErrorRedirected', 'true');
+
+          // Check if we're not already on the error page to prevent redirect loops
+          if (!window.location.pathname.includes('chrome-extension-error.html')) {
+            // Redirect to the error page
+            window.location.href = '%PUBLIC_URL%/chrome-extension-error.html';
+          }
+        }
+      });
+    </script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
