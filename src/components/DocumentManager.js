@@ -152,7 +152,7 @@ const DocumentManager = () => {
                     <div className="level-right">
                         <div className="level-item">
                             <button
-                                className={`button is-success ${embedLoading ? 'is-loading' : ''}`}
+                                className={`button is-primary ${embedLoading ? 'is-loading' : ''}`}
                                 onClick={handleEmbed}
                                 disabled={embedLoading}
                             >

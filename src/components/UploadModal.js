@@ -49,7 +49,7 @@ const UploadModal = ({isActive, onClose, onUpload, uid}) => {
             <div className="modal-background" onClick={onClose}></div>
             <div className="modal-card">
                 <header className="modal-card-head">
-                    <p className="modal-card-title">ファイルアップロード</p>
+                    <p className="modal-card-title has-text-white">ファイルアップロード</p>
                     <button className="delete" aria-label="close" onClick={onClose}></button>
                 </header>
                 <section className="modal-card-body">
@@ -77,7 +77,7 @@ const UploadModal = ({isActive, onClose, onUpload, uid}) => {
                                     📁
                                 </span>
                                 <span className="file-label">
-                                    複数ファイルを選択...
+                                    ファイルを選択...
                                 </span>
                             </span>
                         </label>
